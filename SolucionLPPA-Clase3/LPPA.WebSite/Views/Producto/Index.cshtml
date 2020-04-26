@@ -1,0 +1,30 @@
+﻿@using LPPA.WebSite.Models
+@{
+    ViewBag.Title = "Listado principal de productos";
+}
+
+<h2>Listado General</h2>
+<p>
+    <a href="/Producto/Create">Nuevo producto</a>
+</p>
+<hr />
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Dominio.Get())
+        {
+            <tr>
+                <td>@item.codigo</td>
+                <td>@item.nombre</td>
+                <td>@item.descripcion</td>
+            </tr>
+        }
+    </tbody>
+</table>
